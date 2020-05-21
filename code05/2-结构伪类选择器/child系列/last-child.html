@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>结构性伪类选择符 E:last-child</title>
+		<style>
+			p:last-child{color:#f00;}
+		</style>
+	</head>
+	<body>
+		<div id="A">
+			<p>我是父亲的第1个子元素</p>
+			<p>我是父亲的第2个子元素</p>
+			<p>我是父亲的第3个子元素</p>
+			<p>我是父亲的第4个子元素</p>
+			<h4>我是父亲的最后一个子元素，可惜我不是p标签，所以无法选中我</h4>
+		</div>
+		
+		<hr />
+		
+		<div id="B">
+			<p>我是父亲的第1个子元素</p>
+			<p>我是父亲的第2个子元素</p>
+			<p>我是父亲的第3个子元素</p>
+			<p>我是父亲的第4个子元素</p>
+			<p>我是父亲的第5个子元素，并且我是p标签，所以我被选中了</p>
+		</div>
+		
+		
+	 
+	</body>
+</html>
+			

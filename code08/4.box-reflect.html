@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+	<head><meta charset="utf-8" />
+		<style>
+			img{margin:300px;}
+			img.above{-webkit-box-reflect:above;/*设置倒影在盒子的上方*/}
+			img.below{-webkit-box-reflect:below;/*设置倒影在盒子的下方*/}
+			img.left{-webkit-box-reflect:left;/*设置倒影在盒子的左方*/}
+			img.right{-webkit-box-reflect:right;/*设置倒影在盒子的右方*/}
+
+			/*第二个参数用于设定倒影和原盒子模型之间的距离，可以为负数*/
+			img.reflect1{-webkit-box-reflect:right 50px;}
+			/*渐变图片效果（图片倒影）*/
+			img.reflect2{-webkit-box-reflect:below 10px -webkit-linear-gradient(top,transparent,#FFF)}
+
+			p{
+				font-size:30px;font-family:"黑体";
+				-webkit-box-reflect:below 2px -webkit-linear-gradient(top,transparent,transparent 50%,#FFF);
+			}
+
+		</style></head><body>
+
+		<p>锄禾日当午，汗滴禾下土</p>
+		<p>谁知盘中餐，粒粒皆辛苦</p>
+
+		<hr>
+
+
+		<img src="img2.jpg">
+		<img class="above" src="img2.jpg">	
+		<img class="below" src="img2.jpg">
+		<img class="left" src="img2.jpg">
+		<img class="right" src="img2.jpg">
+
+		<!--设置第二个参数-->
+		<img class="reflect1" src="img2.jpg">
+
+		<!--渐变图片效果-->
+		<img class="reflect2" src="img2.jpg">
+
+
+	</body>
+</html>

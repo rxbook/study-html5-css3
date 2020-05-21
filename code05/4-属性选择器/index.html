@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>E[att]</title>
+		<style>
+			/*---------CSS2中支持的----------*/
+			/*E[att] */
+			p[id]{background:#CCC;}
+			/*E[att="val"]*/
+			p[id="green"]{background:green;}
+			/*E[att~="val"]*/
+			/* 如果写p[class="yellow"]只能匹配<p class="yellow"> */
+			p[class~="yellow"]{background:yellow;}
+			/*E[att|="val"]*/
+			p[class|="a"]{background:pink;}
+			
+			/*---------CSS3中支持的----------*/
+			/*E[att^="val"]*/
+			a[href^="http://"]{background:#C90;}
+			/*E[att$="val"]*/
+			a[href$="zip"]{background:#FF6}
+			/*E[att*="val"] 此处匹配本页中超链接中含有字符"a"的 */
+			a[href*="a"]{font-weight:bold;color:red}
+			
+			/*实例：仿百度文库*/
+			a[href$=".doc"]:before{content:url(images/doc.jpg)}
+			a[href$=".xls"]:before{content:url(images/xls.jpg)}
+			a[href$=".ppt"]:before{content:url(images/ppt.jpg)}
+			a[href$=".txt"]:before{content:url(images/txt.jpg)}
+			a[href$=".rar"]:before{content:url(images/rar.jpg)}
+ 
+			
+			
+		</style>
+	</head>
+	<body>
+    	 【CSS2】<br>
+		 <p id="abc">选择具有id属性的p元素。</p>
+         <p id="green">选择具有id属性且属性值等于"green"的p元素。</p>
+         <p class="colr yellow">选择具有class属性且属性值为一用空格分隔的字词列表，其中一个等于"yellow"的p元素。</p>
+         <p class="a-b">选择具有class属性且属性值为以"a"开头并用连接符"-"分隔的字符串的p元素。</p>
+         
+         <hr>
+         
+         【CSS3】<br>
+         <a href="http://www.baidu.com">选择具有href属性且属性值为以"http://"开头的字符串的a元素。</a> <br>
+         <a href="index.php">这个超链接和上面的进行对比，没有以"http://"开头</a> <br><br>
+         
+         <a href="game.zip">选择具有href属性且属性值为以"zip"结尾的字符串的a元素。即下载zip文件</a> <br>
+         <a href="info.jpg">和上面的对比，这个是下载.jpg文件</a> <br><br>
+         
+         
+         <hr>
+         
+         【实例演示，仿百度文库】<br>
+         <a href="1.doc">点击下载word文件.doc</a> <br>
+         <a href="1.xls">点击下载Excel文件.xls</a> <br>
+         <a href="1.ppt">点击下载PPT文件.ppt</a> <br>
+         <a href="1.txt">点击下载txt文本文件.txt</a> <br>
+         <a href="1.rar">点击下载rar压缩文件.rar</a> <br>
+
+         
+         
+         
+         
+         
+         
+	</body>
+</html>
+			

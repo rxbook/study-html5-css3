@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<style>
+
+			#div1{
+				width:300px;height:300px;
+				background:url(./img1.jpg) center no-repeat blue;
+				border-image-source:none;
+			}
+
+			#div2{
+				width:300px;
+				height:300px;
+				background:url(./img1.jpg) center no-repeat ;
+				border-image-source:url(./border.png);/*边框图片属性*/
+				border-image-width:27px;/*边框图片宽度属性*/
+				border-image-slice:27;/*边框图片切割属性*/
+				border-image-outset:0px;/*边框图片扩展属性*/
+				border-image-repeat:stretch;/*边框图片重复属性*/
+			}
+
+			#div3{
+				width:300px;height:300px;
+				background:url(img1.jpg) no-repeat center;
+				border-image-source:url(border.png);
+				border-image-width:27px;
+				border-image-slice:27;
+				border-image-outset:0px;
+				border-image-repeat:repeat;/*设定重复方式为重复*/
+			}
+
+			#div4{
+				width:300px;height:300px;
+				background:url(img1.jpg) no-repeat center;
+				border-image-source:url(border.png);
+				border-image-width:27px;
+				border-image-slice:27;
+				border-image-outset:0px;
+				border-image-repeat:round;/*设定重复方式为round*/
+			}
+			
+			#div5{/*和#div1 进行对比*/
+				width:300px;height:300px;
+				background:url(./img1.jpg) center no-repeat ;
+				border-image-source:url(./border.png);
+				border-image-width:27px;
+				border-image-slice:27 fill;
+				/*设定边框图片背景填充内容部分,会显示第5块切割的内容*/
+				border-image-outset:0px;
+				border-image-repeat:stretch;
+			}
+
+			#div6{
+				width:300px;height:300px;
+				background:url(./img1.jpg) center no-repeat ;
+				border-image-source:url(./border.png);
+				border-image-width:27px;
+				border-image-slice:54;/*切割为宽度的2倍*/
+				border-image-outset:0px;
+				border-image-repeat:stretch;
+			}
+
+			#div7{
+				width:300px;height:300px;
+				background:url(./img1.jpg) center no-repeat ;
+				border-image-source:url(./border.png);
+				border-image-width:27px;
+				border-image-slice:81;/*切割为宽度的3倍*/
+				border-image-outset:0px;
+				border-image-repeat:stretch;
+			}
+			
+			#div8{
+				width:300px;
+				height:300px;
+				background:url(./img1.jpg) center no-repeat ;
+				border-image-source:url(./border.png);
+				border-image-width:27px;
+				border-image-slice:27;
+				border-image-outset:30px;/*向外扩展的大小：30px*/
+				border-image-repeat:repeat;
+			}
+
+		</style>
+	</head>
+	<body>
+		【border-image-source:none】<br>
+		<div id="div1"></div>	<br>
+
+		【border-image-repeat:stretch（默认值）】<br>
+		<div id="div2"></div>	<br>
+
+		【border-image-repeat:repeat;/*设定重复方式为重复*/】<br>
+		<div id="div3"></div>	<br>
+
+		【border-image-repeat:round;/*设定重复方式为round*/】<br>
+		<div id="div4"></div>	<br>
+
+		【border-image-slice:27 fill;】<br>
+		<div id="div5"></div>	<br>
+
+		【border-image-slice:54;/*切割为宽度的2倍*/】<br>
+		<div id="div6"></div>	<br>
+
+		【border-image-slice:81;/*切割为宽度的3倍*/】<br>
+		<div id="div7"></div>	<br><br><br>
+
+		<div id="div8"></div>	<br><br>
+		 
+	</body>
+</html>

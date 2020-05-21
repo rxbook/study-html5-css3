@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<style>
+
+			div{
+				margin:50px;background:#ccc;
+				width:200px;height:100px;
+			}
+			#left-top{
+				-webkit-box-shadow:-10px -10px;/*实验性质的浏览器写法*/
+				box-shadow:-10px -10px;/*实现W3C的标准*/
+			}
+			
+			#right-top{box-shadow:10px -10px;}			
+			#right-bottom{box-shadow:10px 10px;}			
+			#left-bottom{box-shadow:-10px 10px;}
+			
+			#rouhe{box-shadow:10px 10px 10px;}	
+			
+			#color{box-shadow:10px 10px 10px green}
+			
+			.button-inset{box-shadow:5px 5px inset;}
+
+			/*彩虹阴影效果*/
+			.multiple{
+				margin:200px;width:200px;
+				height:100px;background:#ccc;
+				box-shadow:
+					0px 0px 10px 10px red,/*赤色阴影*/
+					0px 0px 10px 20px orange,/*橙色阴影*/
+					0px 0px 10px 30px yellow,/*黄色阴影*/
+					0px 0px 10px 40px green,/*绿色阴影*/
+					0px 0px 10px 50px cyan,/*青色阴影*/
+					0px 0px 10px 60px blue,/*蓝色阴影*/
+					0px 0px 10px 70px purple;/*紫色阴影*/
+			}
+
+			/*按钮没被按下的效果，按下的效果看后面的js*/
+			#btn{
+				width:120px;height:50px;				 
+				box-shadow:5px 5px;				 
+				text-align:center;
+			}
+
+		</style>
+	</head>
+	<body>
+		<div id="left-top">
+			left-top
+		</div>
+		
+		<div id="right-top">
+			right-top
+		</div>
+		
+		<div id="right-bottom">
+			right-bottom
+		</div>
+		
+		<div id="left-bottom">
+			left-bottom
+		</div>
+		
+		<div id="rouhe">
+			柔和属性
+		</div>
+		
+		<div id="color">
+			彩色阴影
+		</div>
+		
+		<div class="button-inset">
+			<br>&nbsp;&nbsp;&nbsp;&nbsp;内阴影<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;（按钮按下去的效果）
+		</div>
+
+		<hr>		
+		<!-- 彩虹阴影效果 -->
+		<div class="multiple"></div>
+
+		<hr>		
+		<!-- 按钮点击效果 -->
+		<div id="btn"><br>点击按钮试试</div>
+		
+		<script>	
+			var button=document.getElementById('btn');			
+			button.onmousedown=function(){	//按下鼠标事件		
+				this.style.boxShadow='5px 5px inset';//修改阴影效果
+			}			
+			button.onmouseup=function(){	//松开鼠标事件
+				this.style.boxShadow='5px 5px';
+			}			
+			button.onmouseout=function(){//鼠标移出事件
+				this.style.boxShadow='5px 5px';
+			}			
+		</script>
+
+	</body>
+</html>

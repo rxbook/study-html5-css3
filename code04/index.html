@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>form</title>
+</head>
+
+<body>
+【HTML5中表单提交的新方式】
+<form action="http://localhost/test.php" method="post" id="rx1"></form>
+<input type="text" name="user" value="" form="rx1" />
+<input type="password" name="pwd" value="" form="rx1" />
+<input type="submit" value="提交" form="rx1" />
+
+<hr>
+【表单新属性】
+<form action="http://localhost/test.php" method="post" id="register"></form>
+
+默认值:<input type="text" name="test" value="哈哈" placeholder="我是新的HTML5的默认值" pattern="\d{3}" form="register" /> <br><br>
+邮箱（必填）：<input type="email" name="youxiang" form="register"/> <br><br>
+URL：<input type="url" name="url" form="register"/> <br><br>
+日历:<input type="date" name="riqi" form="register" /> <br><br>
+时间：<input type="time" name="shijian" form="register" /> <br><br>
+Month：<input type="month" name="yue" value="" form="register" /> <br><br>
+WEEK：<input type="week" name="zhou" value="" form="register" /> <br><br>
+数字：<input type="number" name="shuzi" value="" form="register"  required="required" autofocus="autofocus"/> <br><br>
+滑动条：<input type="range" name="huadong" value="" form="register" max="20" step="5" /> <br><br>
+搜索：<input type="search" name="sousuo" value="" form="register" results="n" /> <br><br>
+颜色：<input type="color" name="yanse" value="" form="register" /> <br><br>
+
+<hr>
+自动填充表单<br />
+<input type="text" name="auto" value="" list="movie"  form="register" />
+<datalist id="movie">
+    <option>2人在囧途</option>
+    <option>5车在囧途</option>
+    <option>2泰囧</option>
+</datalist>
+
+<hr>
+output的使用<br>
+<form action="" method="post" oninput="result.value=parseInt(no1.value)+parseInt(no2.value)">
+    <input type="number" name="no1" value="" /> +
+    <input type="number" name="no2" value="" /> =
+    <output name="result"></output>
+</form>
+
+
+<br><br>
+ 
+<input type="submit" value="提交" form="register" />
+
+
+</body>
+</html>

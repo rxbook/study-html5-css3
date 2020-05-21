@@ -1,0 +1,103 @@
+<!doctype html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<html>
+	<head></head>
+	<body>
+    
+		<video src="movie.webm" controls>
+			 您的浏览器不支持video标签，请更新您的浏览器！
+		</video>
+        
+		<hr />
+		多资源的视频播放，不同的浏览器支持不同的格式<br>
+        
+        <!--width和height设置播放器的宽和高，autoplay自动播放，loop循环播放，poster封面图片-->
+		<video controls width="300" height="130"  poster="1.jpg">	
+        	<!--如果浏览器支持webm格式，则直接播放第一个视频，不管后面的-->		
+			<source src="movie.webm" type="video/webm" />
+            <!--否则的话，如果浏览器支持ogg格式，则播放第2个视频，不管后面的-->	
+            <source src="movie.ogg" type="video/ogg" />
+            <!--否则的话，如果浏览器支持mp4格式，则播放第3个视频，不管后面的-->	
+            <source src="movie.mp4" type="video/mp4" />
+            <!--否则的话，给出提示文字-->	
+			您的浏览器不支持视频标签，赶快升级吧。
+		</video>
+        
+        <hr />
+        video标签的API<br />
+		<video src="movie.webm" controls id="video" onPlay="alert('视频开始播放')" onPause="alert('视频暂停')">
+			 您的浏览器不支持video标签，请更新您的浏览器！
+		</video>
+        <br />
+
+        <button onclick="bofang()">播放</button>
+		<button onclick="zanting()">暂停</button>
+		<button onclick="kuaijin()">快进10秒</button>
+		<button onclick="kuaitui()">快退10秒</button>
+		<button onclick="shutup(this)">静音</button>
+		<button onclick="soso()">加速播放</button>
+		<button onclick="yu()">减速播放</button>
+		<button onclick="normal()">正常播放</button>
+		<button onclick="upper()">加大音量</button>
+		<button onclick="lower()">降低音量</button>
+     
+        
+        <script>
+			//获取对应的video标签
+			var video=document.getElementById('video');
+			//播放方法
+			function bofang(){
+				video.play();
+			}
+			//暂停方法
+			function zanting(){
+				video.pause();
+			}
+			//快进10秒
+			function kuaijin(){
+				video.currentTime+=10;//相当于video.currentTime=video.currentTime+10
+			}
+			//快退10秒
+			function kuaitui(){
+				video.currentTime-=10;
+			}
+			//静音按钮
+			function shutup(obj){
+				if(video.muted){
+					obj.innerHTML="静音";
+					video.muted=false;
+				}else{
+					obj.innerHTML="开音";
+					video.muted=true;
+				}
+			}
+			//加速播放(3倍速度)
+			function soso(){
+				video.playbackRate=3;
+			}
+			//慢速播放(慢三倍)
+			function yu(){
+				video.playbackRate=-3;
+			}
+			//正常倍速
+			function normal(){
+				video.playbackRate=1;//默认的播放倍速是1
+			}
+			//调高声音
+			function upper(){
+				video.volume+=0.2;//声音值的范围是0-1
+			}
+			//调低声音
+			function lower(){
+				video.volume-=0.2;
+			}
+		</script>
+
+		<hr>
+        音频标签的使用<br />
+		<audio src="music.mp3" controls="controls">
+			您的浏览器不支持audio标签！
+		</audio>
+
+	</body>
+</html>

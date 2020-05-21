@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+	<head><meta charset="utf-8" />
+		<style>
+
+			#y1{/*CSS1和2中的普通直角边框*/
+				width:150px;
+				height:50px;
+				border:2px solid red;
+			}
+
+			#y2{/*border-radius:设置圆角*/
+				width:150px;height:50px;padding:10px;
+				border:2px solid red;				
+				border-radius:20px;/*等价于 border-radius:20px/20px; */
+				/*设定一个值会同时设定四个角的圆角程度*/
+				/*如果圆角的半径相同，每个值可以只写一个参数,X相当于写2个一样的参数。
+				例如 30px/30px 和30px 是等同的*/
+			}
+			
+			#y3{/*border-radius:20px 40px;*/
+				width:150px;height:50px;padding:10px;
+				border:2px solid red;				
+				border-radius:20px 40px;
+				/*20px左上和右下的垂直半径,40px代表右上和左下的垂直半径*/				
+			}
+			
+			#y4{/*border-radius:20px/20px 40px;（这里很神奇，和上面的注意区别！！）*/
+				width:150px;height:50px;padding:10px;
+				border:2px solid red;				
+				border-radius:20px/20px 40px;/*等价于border-radius:20px/20px 20px/40px;*/
+				/*20px左上和右下的垂直半径,40px代表右上和左下的垂直半径*/				
+			}
+			
+			#y5{
+				width:150px;height:50px;
+				border:2px solid red;padding:10px;
+				border-radius:20px/20px 40px 80px;
+				/*左上角：20px/20px，右上角和左下角：20px/40px，右下角：20px/80px*/				
+			}
+
+			#y6{/*四个一起设置，不明白的时候就用这个，肯定错不了*/
+				width:150px;height:50px;
+				border:2px solid red;padding:10px;
+				border-radius:20px 40px 80px 100px/20px 40px 80px 100px;
+				/* "/" 前面表示 左上、右上、右下、左下的水平半径，
+				   "/" 后面表示 左上、右上、右下、左下的垂直半径。 */
+			}
+
+			#y7{
+				width:200px;height:100px;
+				border:2px solid red;
+				border-radius:100px/50px;
+				/* 100=200/2，50=100/2 */
+			}
+
+			#y8{
+				width:200px;height:100px;
+				border:2px solid red;
+				border-top-right-radius:100px 50px;/*右上角*/
+				border-bottom-right-radius:100px 50px/*右下角*/
+			}
+
+			#y9{
+				width:100px;height:100px;
+				border:2px solid red;
+				border-radius:50px;
+				/*border-radius:50px/50px;该方式也可以*/
+			}
+			
+			#y10{
+				width:100px;height:50px;
+				border:2px solid red;
+				/*单独给border-bottom设置50px*/
+				border-bottom:50px solid red;
+				border-radius:50px;
+			}
+			
+			/*太极效果*/
+			#yuan{
+				width:100px;height:50px;
+				border-top:2px solid red;
+				border-bottom:50px solid red;				
+				border-radius:100px;
+				position:relative;/*设置为对象的参照物*/
+			}			
+			#yuan::after{
+				content:'';
+				width:10px;height:10px;
+				border:20px solid red;
+				position:absolute;
+				left:0px;top:25px;
+				border-radius:50px;
+				background:#fff; 	
+			}
+			#yuan::before{
+				content:'';
+				width:10px;height:10px;
+				border:20px solid #FFF;
+				position:absolute;
+				right:0px;top:25px;
+				border-radius:50px;
+				background:red;			
+			}
+
+		</style>
+	</head>
+	<body>
+		<div id="y1">y1圆角属性设定方法：普通边框</div>	<br>
+		
+		<div id="y2">y2圆角属性设定方法：圆角边框</div>	<br>
+
+		<div id="y3">y3圆角属性设定方法：圆角边框</div>	<br>
+
+		<div id="y4">[y4]border-radius:20px/20px 40px;</div>	<br>
+
+		<div id="y5">[y5]border-radius:20px/20px 40px 80px;</div>	<br>
+		
+		<div id="y6">[y6]border-radius:20px/20px 40px 80px;</div>	<br>
+
+		<div id="y7">[y7]椭圆效果的实现</div>	<br>
+
+		<div id="y8">[y8]子弹头效果的实现</div>	<br>
+
+		<div id="y9">[y9]圆形效果的实现</div>	<br>
+
+		<div id="y10">[y10]半圆（半月）效果的实现</div>	<br>
+		
+		<div id="yuan">[y11]太极效果</div>	<br>
+
+		<br><br>
+
+	</body>
+</html>

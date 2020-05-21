@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    <meta charset="utf-8" />
+		<style>
+			input:disabled{background:green}
+			input:enabled{background:pink}
+			
+			input:checked+span{background:#f00;}
+		</style>
+	</head>
+	<body>
+		<form method="post" action="#">
+		<fieldset>
+			<legend>disabled和enabled</legend>
+			<ul>
+				<li><input type="text" name="id" value="99" disabled /></li>
+				<li><input type="text" name="user" value="" /></li>
+			</ul>
+		</fieldset>
+		<fieldset>
+			<legend>选中下面的项试试</legend>
+			<ul>
+				<li><label><input type="radio" name="sex" value="0" /><span>蓝色</span></label></li>
+				<li><label><input type="radio" name="sex" value="1" checked /><span>红色</span></label></li>
+				<li><label><input type="radio" name="sex" value="2" /><span>黑色</span></label></li>
+			</ul>
+		</fieldset>
+		<fieldset>
+			<legend>选中下面的项试试</legend>
+			<ul>
+				<li><label><input type="checkbox" name="like" value="0" /><span>蓝色</span></label></li>
+				<li><label><input type="checkbox" name="like" value="1" checked /><span>红色</span></label></li>
+				<li><label><input type="checkbox" name="like" value="2" /><span>黑色</span></label></li>
+			</ul>
+		</fieldset>
+		</form>
+</body>
+</html>
+			
